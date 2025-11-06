@@ -1,15 +1,11 @@
 ﻿services:
   - type: web
     name: weddinggame
-    runtime: docker              # ✅ 新版 Render 用 runtime 取代 env
+    runtime: docker
     plan: free
     region: singapore
-    buildCommand: "dotnet publish -c Release -o out"
-    startCommand: "dotnet out/WeddingGame.dll"
 
     envVars:
-      - key: ASPNETCORE_URLS
-        value: http://0.0.0.0:10000
       - key: ConnectionStrings__DefaultConnection
         fromDatabase:
           name: weddinggame-db
