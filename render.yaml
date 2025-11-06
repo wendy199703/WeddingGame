@@ -1,7 +1,7 @@
 ﻿services:
   - type: web
     name: weddinggame
-    runtime: node              # ✅ 新版 Render 用 runtime 取代 env
+    runtime: docker              # ✅ 新版 Render 用 runtime 取代 env
     plan: free
     region: singapore
     buildCommand: "dotnet publish -c Release -o out"
